@@ -1007,12 +1007,16 @@ const RAW=RAW_DATA.map(r=>Object.fromEntries(RAW_KEYS.map((k,i)=>[k,r[i]])));
 
 
 // ── INIT ──────────────────────────────────────────────────────
-renderProdBars();
-renderManagers();
-renderReps();
-renderOpps();
-renderStars();
-renderSectors();
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    renderProdBars();
+    renderManagers();
+    renderReps();
+    renderOpps();
+    renderStars();
+    renderSectors();
+  } catch(e) { console.error('Init error:', e); }
+});
 
 // ── ACCOUNTS TAB ─────────────────────────────────────────────
 function initAccountsTab() {
